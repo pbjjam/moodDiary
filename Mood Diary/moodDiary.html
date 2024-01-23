@@ -1,0 +1,111 @@
+<!doctype html>
+<!-- Jeong Hyo Kang - Mood Diary -->
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Mood Diary</title>
+        <style>
+            @import url(moodDiary.css);
+        </style>
+            <script src="moodDiary.js">
+        </script>
+    </head>
+
+    <body>
+        <h1>Mood Diary</h1>
+        <!-- <h1><a href="/moodDiary.html">Mood Diary</a></h1> -->
+        <nav>
+            <ul id="menu" role="menubar">
+                <li id="loginButton"><a href="#"><b>Sign Up</b></a></li>
+                <li id="idkButton"><a href="#"><b>Profile</b></a></li>
+                <li id="settingsButton"><a href="#"><b>Settings</b></a>
+                    <ul id="settingsMenu">
+                        <li id="privacyButton"><a href="#"><b>Privacy</b></a></li>
+                        <li id="profileButton"><a href="#"><b>Profile</b></a></li>
+                        <li id="aboutButton"><a href="#"><b>About</b></a></li>
+                    </ul>
+                </li>
+            </ul>
+            
+            <form action="/loginlist.php" method="POST">
+                <fieldset id="loginInfo">
+                    <legend><b>Login/Sign up</b></legend>
+                    <ol>
+                        <li class="infoInsert"><label for="user" style="letter-spacing: 1.25px; word-spacing: .22em;">User ID:</label>
+                            <input type="text" name="user id" id="user"></li>
+                        <li class="infoInsert"><label for="password">Password:</label>
+                            <input type="password" name="pswd" id="password"></li>
+                    </ol>
+                    <input type="submit" class="button" id="submitButton" value="Submit">
+                    <input type="button" class="button" id="signUpButton" value="Sign Up">
+                </fieldset>
+            </form>  
+        </nav>
+        <br  id="start">
+        <p>
+            <label for="date"><b>Date</b></label>
+            <time>
+                <input type="date" id="date">
+            </time>
+        </p>
+        <p>
+            <label for="moodMenu"><b>Mood</b></label>
+            <select id="moodMenu">
+                <option>ecstatic</option>
+                <option>happy</option>
+                <option>relaxed</option>
+                <option>okay</option>
+                <option>bored</option>
+                <option>tired</option>
+                <option>sad</option>
+                <option>depressed</option>
+                <option>anxious</option>
+                <option>angry</option>
+                <option>frustrated</option>
+                <option>out of control</option>
+            </select>
+        </p>
+
+        <p>
+            <input type="radio" id="happyFace" name="moods"><img src="Faces/happy.jpg" height="30" alt="happy"/>
+            <input type="radio" id="smileFace" name="moods"><img src="Faces/smile.jpg" height="30" alt="smile"/>
+            <input type="radio" id="relaxedFace" name="moods"><img src="Faces/relaxed.jpg" height="30" alt="relaxed"/>
+            <input type="radio" id="okFace" name="moods"><img src="Faces/ok.jpg" height="30" alt="ok"/>
+            <input type="radio" id="tiredFace" name="moods"><img src="Faces/tired.jpg" height="30" alt="tired"/>
+        <br>
+            <input type="radio" id="sadFace" name="moods"><img src="Faces/sad.jpg" height="30" alt="sad"/>
+            <input type="radio" id="cryFace" name="moods"><img src="Faces/cry.jpg" height="30" alt="cry"/>
+            <input type="radio" id="anxiousFace" name="moods"><img src="Faces/anxious.jpg" height="30" alt="anxious"/>
+            <input type="radio" id="angryFace" name="moods"><img src="Faces/angry.jpg" height="30" alt="angry"/>
+            <input type="radio" id="squiggleFace" name="moods"><img src="Faces/squiggle.jpg" height="30" alt="squiggle"/>
+        </p>
+        <p>
+            <label for="whyBox"><b>Why</b> do I feel this way?</label>
+            <br>
+            <input type="text" id="reasonBox">
+        </p>
+        <form action="/client.php" method="POST" enctype="multipart/form-data">
+            <label for="dailyImage">Add a photo from this day <em>(optional)</em>:<br>
+                <input type="file" id="dailyImage" name="photo"></label>
+        </form>
+        <p>
+            <input type="button" class="button" value="Show My Diary Entry" id="showButton">
+        </p>
+        
+        <div id="diaryEntry" style="visibility: hidden;">
+            <p id="moodDate"></p>
+            <p id="outlook"></p>
+            <p id="reasonConsole"></p>
+            <p id="image"></p>
+            <p id="advice"></p>
+
+        </div>
+
+        <hr color="cornflowerblue">
+        <address>
+            <small>Contributed by <a href="">Jeong&nbsp;Hyo&nbsp;Kang</a>, <a href="">Pbjam Studio <sup>&copy;</sup></a></small>
+            <br>
+            <small><a href="mailto:pbjamart@gmail.com">Contact Me</a></small>
+        </address>
+    </body>
+</html>
